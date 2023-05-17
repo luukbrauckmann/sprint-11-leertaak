@@ -1,0 +1,13 @@
+.start {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.start > .page {
+  scroll-snap-align: start;
+}
+
+.check-in {
+  background: deeppink;
+}
+

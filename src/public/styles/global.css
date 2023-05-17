@@ -1,0 +1,171 @@
+/*
+====================
+Imports
+*/
+@import url("./components/page.css");
+
+/*
+====================
+Fonts
+*/
+@font-face {
+  font-family: Medium;
+  src: url("../fonts/FiraSans/FiraSans-Medium.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Light;
+  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Extra Light Italic;
+  src: url("../fonts/FiraSans/FiraSans-ExtraLightItalic.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Book;
+  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Book Italic;
+  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bold;
+  src: url("../fonts/FiraSans/FiraSans-Bold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("../fonts/FiraSans/FiraSans-Regular.ttf");
+  font-display: swap;
+}
+
+/*
+====================
+Variables
+*/
+:root {
+  --font-size: 1em;
+  --font-family: Regular, san-serif;
+  --spacing: 1rem;
+
+  --primary-color: rgb(212, 0, 91);
+
+  --success-color: rgb(34, 197, 94);
+  --info-color: #3b82f6;
+  --warning-color: #f59e0b;
+  --error-color: rgb(239, 68, 68);
+
+  --background: #f3f3f3;
+
+  --body-padding: calc(
+    ((100vw - var(--max-screen-width)) / 2) + var(--spacing)
+  );
+  --max-screen-width: 100%;
+
+  --breakpoint-sm: 36rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 62rem;
+  --breakpoint-xl: 75rem;
+  --breakpoint-xxl: 90rem;
+
+  --heading-font: Medium, san-serif;
+}
+
+/*
+====================
+Default styling
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+html,
+body {
+  height: 100%;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--text-color);
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+body > header,
+body > footer {
+  flex: 0;
+}
+
+body > main {
+  flex: 1;
+}
+
+@media (min-width: 36rem) {
+  :root {
+    --max-screen-width: var(--breakpoint-sm);
+  }
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --max-screen-width: var(--breakpoint-md);
+  }
+}
+
+@media (min-width: 62rem) {
+  :root {
+    --max-screen-width: var(--breakpoint-lg);
+  }
+}
+
+@media (min-width: 75rem) {
+  :root {
+    --max-screen-width: var(--breakpoint-xl);
+  }
+}
+
+@media (min-width: 90rem) {
+  :root {
+    --max-screen-width: var(--breakpoint-xxl);
+  }
+}
+

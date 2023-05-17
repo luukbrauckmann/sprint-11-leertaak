@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%- title %></title>
+
+    <link rel="stylesheet" href="/styles/global.css" />
+    <% for (let style of styles) { %>
+    <link rel="stylesheet" href="/styles<%- style %>" />
+    <% } %>
+
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/scripts/global.js" defer></script>
+
+    <% for (let script of scripts) { %>
+    <script src="/scripts<%- script %>" defer></script>
+    <% } %>
+  </head>
+  <body>
+    <!-- prettier-ignore -->
+    <%- include('./partials/header.ejs') %>
+    <%- include('./partials/main.ejs')%>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
+
