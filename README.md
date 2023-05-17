@@ -39,6 +39,8 @@ Zorg dat je NodeJS geïnstalleerd hebt. Clone deze repository. Open een terminal
 - [nodemon](https://nodemon.io/)
 - [Pen menu](https://codepen.io/luuk-brauckmann/pen/jOvdbeq)
 - [Pen folder card](https://codepen.io/luuk-brauckmann/pen/eYLQOQB)
+- [Pen user poppetjes](https://codepen.io/luuk-brauckmann/pen/GRYXVgX)
+- [Pen voor bus animatie](https://codepen.io/luuk-brauckmann/pen/NWORzYq)
 
 <h2 id="licenties">🪪 Licenties</h2>
 
