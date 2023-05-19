@@ -7,11 +7,12 @@
 
 <h2 id="inhoud">📦 Inhoud</h2>
 
-1. Beschrijving
-2. Gebruik
-3. Kenmerken
-4. Bronnen
-5. Licenties
+1. [Beschrijving](https://github.com/luukbrauckmann/sprint-11-leertaak#%E2%84%B9%EF%B8%8F-beschrijving)
+2. [Gebruik](https://github.com/luukbrauckmann/sprint-11-leertaak#%EF%B8%8F-gebruik)
+3. [Kenmerken](https://github.com/luukbrauckmann/sprint-11-leertaak#-kenmerken)
+4. [Installatie](https://github.com/luukbrauckmann/sprint-11-leertaak#-installatie)
+5. [Bronnen](https://github.com/luukbrauckmann/sprint-11-leertaak#-bronnen)
+6. [Licenties](https://github.com/luukbrauckmann/sprint-11-leertaak#-bronnen)
 
 <h2 id="beschrijving">ℹ️ Beschrijving</h2>
 
