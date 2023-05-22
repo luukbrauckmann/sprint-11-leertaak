@@ -6,6 +6,7 @@ import helmet from 'helmet'
 
 import startPage from './routes/start-page.js'
 import partnersPage from './routes/partners-page.js'
+import { fontawesome } from './helpers/fontawesome.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -22,6 +23,8 @@ app.use(helmet())
 app.use(express.static('src/public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+fontawesome(app)
 
 /**
  * Routes
