@@ -1,6 +1,6 @@
 import express from 'express'
 
-const startPage = express.Router()
+const partners = express.Router()
 
 const options = {
 	path: '/partners',
@@ -12,6 +12,6 @@ const options = {
 	messages: []
 }
 
-startPage.get('/partners', (request, response) => response.render('index', options))
+partners.get('/partners', (request, response) => response.render('index', options))
 
-export default startPage
+export default partners
