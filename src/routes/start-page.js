@@ -12,6 +12,6 @@ const options = {
 	messages: []
 }
 
-startPage.get('/', (request, response) => response.render('index', options))
+startPage.get(options.path, (request, response) => response.render('index', options))
 
 export default startPage

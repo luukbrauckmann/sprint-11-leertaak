@@ -1,10 +1,10 @@
 import express from 'express'
 
-const partners = express.Router()
+const partnersPage = express.Router()
 
 const options = {
 	path: '/partners',
-	title: 'partners',
+	title: 'Partners',
 	template: 'partners.ejs',
 	styles: ['/pages/partners.css'],
 	scripts: ['/components/partners.js'],
@@ -12,6 +12,6 @@ const options = {
 	messages: []
 }
 
-partners.get('/partners', (request, response) => response.render('index', options))
+partnersPage.get(options.path, (request, response) => response.render('index', options))
 
-export default partners
+export default partnersPage
