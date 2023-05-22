@@ -5,6 +5,7 @@ import compression from 'compression'
 import helmet from 'helmet'
 
 import startPage from './routes/start-page.js'
+import partners from './routes/partners.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -27,6 +28,8 @@ app.use(express.urlencoded({ extended: true }))
  * Use seperate route files
  */
 app.use('/', startPage)
+app.use('/partners', partners)
+
 
 /**
  * Create socket connection
