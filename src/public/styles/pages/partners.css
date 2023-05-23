@@ -4,6 +4,12 @@
 ===============================
 */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .page__content {
     display: flex;
     flex-direction: column;
@@ -26,13 +32,14 @@ body {
     --small-size: .5rem;
     --medium-size: 1.2rem;
     --large-size: 1.7rem;
+    --xlarge-size: 3rem;
 
-    --small-radius: 3px;
+    --small-radius: 4px;
     --medium-radius: 6px;
+    --large-radius: 18px;
 
     --c-container: #E6E6E6;
     --c-achtergrond: #ffffff;
-
 }
 
 
@@ -46,6 +53,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--medium-size);
+    width: 100%;
     padding: var(--medium-size) 0;
     border-bottom: 1px solid var(--c-container);
 }
@@ -55,31 +64,25 @@ body {
     font-size: var(--medium-size);
 }
 
-.filter-container :is(.filter details, .sorting select, #new-project)  {
+.filter-container :is(.filter details, .sorting select, #new-project) {
     border: 1px solid var(--c-container);
     border-radius: var(--small-radius);
     padding: var(--small-size);
 }
 
-.filter-container .filter details summary {
-    margin: calc(-1 * var(--small-size));
-    padding: var(--small-size);
+.filter-container .filter details[open] summary {
+    width: 100%;
 }
 
-.filter-container #new-project {
-    margin-top: auto;
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.filter-container :is(.sorting select, button) {
-    cursor: pointer;
+.filter-container .filter {
+    overflow: auto;
 }
 
 .filter-container .filter :is(summary, label, input) {
     align-items: center;
     user-select: none;
     cursor: pointer;
+    /* width: max-content; */
 }
 
 .filter-container .filter fieldset {
@@ -95,6 +98,45 @@ body {
     gap: var(--small-size);
 }
 
+.filter-container .filter .filters .partner-chips {
+    margin-bottom: auto;
+    padding: 2px 0;
+    overflow: auto;
+}
+
+.partner-chips::-webkit-scrollbar {
+    height: 8px;
+}
+
+.partner-chips::-webkit-scrollbar-thumb {
+    background-color: var(--c-container);
+    border-radius: var(--medium-radius);
+}
+
+.filter-container .filter .filters .partner-chips .partner-chip {
+    padding: 2px var(--medium-size);
+    border-radius: var(--large-radius);
+    border: 1px solid #DD296D;
+    background: rgba(221, 41, 109, 0.05);
+}
+
+.filter-container .filter details summary {
+    margin: calc(-1 * var(--small-size));
+    padding: var(--small-size);
+    min-width: 15.8rem;
+}
+
+.filter-container #new-project {
+    margin-top: auto;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    width: max-content;
+}
+
+.filter-container :is(.sorting select, button) {
+    cursor: pointer;
+}
+
 .filter-container :is(.filter, .sorting) {
     display: flex;
     flex-direction: column;
@@ -104,6 +146,9 @@ body {
 .filter-container .filter .filters {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    border-right: 1px solid var(--c-container);
+    padding-right: var(--medium-size);
 }
 
 .filter-container div {
@@ -133,7 +178,7 @@ body {
 
 .projects-overview {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16.5em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
     gap: var(--small-size);
 }
 
@@ -149,14 +194,37 @@ body {
 ===============================
 */
 
+@media only screen and (max-width: 62rem) {
+    .filter-container .filter .filters {
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .filter-container .filter .filters summary {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 48rem) {
+    .filter-container :is(.filter details, .sorting select) {
+        width: 100%;
+    }
+
     .filter-container {
         flex-direction: column;
         gap: var(--medium-size);
     }
+
+    .filter-container .filter .filters {
+        border: none;
+        padding: 0;
+    }
+
     .filter-container .sorting .sorter {
         border: none;
     }
+
     .filter-container div {
         justify-content: space-between;
     }
@@ -166,7 +234,12 @@ body {
     .filter-container .sorting .sorter {
         padding: 0;
     }
-    .filter-container div {
+
+    .filter-container :is(.filter details, .sorting select, #new-project) {
+        width: 100%;
+    }
+
+    .filter-container>div {
         flex-direction: column;
     }
 }
