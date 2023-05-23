@@ -50,18 +50,26 @@ body {
     border-bottom: 1px solid var(--c-container);
 }
 
-.filter-container > * {
+.filter-container * {
     height: fit-content;
+    font-size: var(--medium-size);
 }
 
-.filter-container :is(.filter, .sorting select, #new-project)  {
+.filter-container :is(.filter details, .sorting select, #new-project)  {
     border: 1px solid var(--c-container);
     border-radius: var(--small-radius);
-    padding: var(--xsmall-size) var(--small-size) ;
+    padding: var(--small-size);
+}
+
+.filter-container .filter details summary {
+    margin: calc(-1 * var(--small-size));
+    padding: var(--small-size);
 }
 
 .filter-container #new-project {
-    background-color: red;
+    margin-top: auto;
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
 .filter-container :is(.sorting select, button) {
@@ -69,6 +77,7 @@ body {
 }
 
 .filter-container .filter :is(summary, label, input) {
+    align-items: center;
     user-select: none;
     cursor: pointer;
 }
@@ -86,15 +95,27 @@ body {
     gap: var(--small-size);
 }
 
-.filter-container .sorting {
+.filter-container :is(.filter, .sorting) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
+}
+
+.filter-container .filter .filters {
     display: flex;
     flex-direction: row;
-    gap: var(--small-size);
 }
 
 .filter-container div {
     display: flex;
-    gap: var(--medium-size);
+    gap: var(--small-size);
+}
+
+.filter-container .sorting .sorter {
+    display: flex;
+    gap: var(--small-size);
+    border-right: 1px solid var(--c-container);
+    padding-right: var(--small-size);
 }
 
 
@@ -104,13 +125,48 @@ body {
 ===============================
 */
 
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
+}
+
 .projects-overview {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16.5em, 1fr));
     gap: var(--small-size);
 }
 
 .projects-overview .project {
     border: 1px solid var(--c-container);
     border-radius: var(--small-radius);
+}
+
+
+/*
+===============================
+📱 QUERIES
+===============================
+*/
+
+@media only screen and (max-width: 48rem) {
+    .filter-container {
+        flex-direction: column;
+        gap: var(--medium-size);
+    }
+    .filter-container .sorting .sorter {
+        border: none;
+    }
+    .filter-container div {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 36rem) {
+    .filter-container .sorting .sorter {
+        padding: 0;
+    }
+    .filter-container div {
+        flex-direction: column;
+    }
 }

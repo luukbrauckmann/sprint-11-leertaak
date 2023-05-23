@@ -6,6 +6,7 @@
     <div class="filter-container">
 
       <section class="filter">
+        <h2>Filteren op: </h2>
         <details>
           <summary>Partners</summary>
           <fieldset name="filter">
@@ -24,19 +25,24 @@
 
       <div>
         <section class="sorting">
-          <select name="field" id="">
-            <option value="titel">Titel</option>
-            <option value="datum">Datum</option>
-            <option value="progressie">Progressie</option>
-          </select>
+          <h2>Sorteren op: </h2>
 
-          <select name="direction" id="">
-            <option value="asc">Oplopend</option>
-            <option value="desc">Aflopend</option>
-          </select>
+          <div class="sorter">
+            <select name="field" id="">
+              <option value="titel">Titel</option>
+              <option value="datum">Datum</option>
+              <option value="progressie">Progressie</option>
+            </select>
+
+            <select name="direction" id="">
+              <option value="asc">Oplopend</option>
+              <option value="desc">Aflopend</option>
+            </select>
+          </div>
+
         </section>
 
-        <button id="new-project">Nieuw project</button>
+        <button id="new-project">Nieuw project +</button>
       </div>
 
 
