@@ -1,0 +1,116 @@
+/*
+===============================
+🌍 GLOBAL STYLING TWEAK
+===============================
+*/
+
+.page__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-size);
+}
+
+body {
+    background-color: var(--c-achtergrond);
+}
+
+
+/*
+===============================
+✨ VARIABLES
+===============================
+*/
+
+:root {
+    --xsmall-size: .2rem;
+    --small-size: .5rem;
+    --medium-size: 1.2rem;
+    --large-size: 1.7rem;
+
+    --small-radius: 3px;
+    --medium-radius: 6px;
+
+    --c-container: #E6E6E6;
+    --c-achtergrond: #ffffff;
+
+}
+
+
+/*
+===============================
+📃 FILTER BAR
+===============================
+*/
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--medium-size) 0;
+    border-bottom: 1px solid var(--c-container);
+}
+
+.filter-container > * {
+    height: fit-content;
+}
+
+.filter-container :is(.filter, .sorting select, #new-project)  {
+    border: 1px solid var(--c-container);
+    border-radius: var(--small-radius);
+    padding: var(--xsmall-size) var(--small-size) ;
+}
+
+.filter-container #new-project {
+    background-color: red;
+}
+
+.filter-container :is(.sorting select, button) {
+    cursor: pointer;
+}
+
+.filter-container .filter :is(summary, label, input) {
+    user-select: none;
+    cursor: pointer;
+}
+
+.filter-container .filter fieldset {
+    display: flex;
+    flex-direction: column;
+    border: unset;
+    padding-top: var(--small-size);
+    gap: var(--small-size);
+}
+
+.filter-container .filter fieldset label {
+    display: flex;
+    gap: var(--small-size);
+}
+
+.filter-container .sorting {
+    display: flex;
+    flex-direction: row;
+    gap: var(--small-size);
+}
+
+.filter-container div {
+    display: flex;
+    gap: var(--medium-size);
+}
+
+
+/*
+===============================
+📃 PROJECTS
+===============================
+*/
+
+.projects-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: var(--small-size);
+}
+
+.projects-overview .project {
+    border: 1px solid var(--c-container);
+    border-radius: var(--small-radius);
+}

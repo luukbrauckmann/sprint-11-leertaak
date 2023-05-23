@@ -2,5 +2,73 @@
   <header class="page__header">
     <h1>Partners</h1>
   </header>
-  <div class="page__content"></div>
+  <div class="page__content">
+    <div class="filter-container">
+
+      <section class="filter">
+        <details>
+          <summary>Partners</summary>
+          <fieldset name="filter">
+            <label>
+              <input type="checkbox" value="vervoerregio-amsterdam" id="">Vervoerregio Amsterdam
+            </label>
+            <label>
+              <input type="checkbox" value="gvb" id="">GVB
+            </label>
+            <label>
+              <input type="checkbox" value="9292" id="">9292
+            </label>
+          </fieldset>
+        </details>
+      </section>
+
+      <div>
+        <section class="sorting">
+          <select name="field" id="">
+            <option value="titel">Titel</option>
+            <option value="datum">Datum</option>
+            <option value="progressie">Progressie</option>
+          </select>
+
+          <select name="direction" id="">
+            <option value="asc">Oplopend</option>
+            <option value="desc">Aflopend</option>
+          </select>
+        </section>
+
+        <button id="new-project">Nieuw project</button>
+      </div>
+
+
+    </div>
+
+    <section class="projects">
+      <h2>Projecten</h2>
+
+      <section class="projects-overview">
+
+        <!-- project template -->
+        <section class="project">
+          <div class="project-info">
+            <img src="" alt="favicon logo">
+            <h3>Project titel</h3>
+            <a href="#">project.link.nl</a>
+          </div>
+
+          <div class="project-progression">
+            <p>Algehele progressie: </p>
+            <span>
+              <meter value="15" max="61"></meter>
+              15/61
+            </span>
+          </div>
+
+          <button class="more">...</button>
+        </section>
+
+      </section>
+
+    </section>
+
+  </div>
 </section>
