@@ -45,7 +45,10 @@ socket.on('connection', (client) => {
 	}
 	addPlayer(player)
 	socket.emit('players', players)
-	client.on('disconnect', () => removePlayer(player))
+	client.on('disconnect', () => {
+		removePlayer(client.id)
+		socket.emit('players', players)
+	})
 
 	client.on('players', (player) => {
 		setPlayer(player)
