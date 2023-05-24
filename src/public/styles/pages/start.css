@@ -18,3 +18,9 @@
   background: #2a2922;
   border-bottom: 5rem solid #87ceeb;
 }
+
+.check-in-button {
+  position: absolute;
+  right: 5rem;
+  top: 10rem;
+}

@@ -7,7 +7,7 @@ import helmet from 'helmet'
 import startPage from './routes/start-page.js'
 import partnersPage from './routes/partners-page.js'
 import { fontawesome } from './helpers/fontawesome.js'
-import { addPlayer, removePlayer } from './helpers/socket.js'
+import { addPlayer, removePlayer, players, setPlayer } from './helpers/socket.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -41,16 +41,16 @@ app.use(partnersPage)
 socket.on('connection', (client) => {
 	const player = {
 		id: client.id,
+		checkedIn: false
 	}
-
 	addPlayer(player)
+	client.emit('players', players)
 	client.on('disconnect', () => removePlayer(player))
 
 	client.on('players', (player) => {
-		socket.emit('players', player)
+		setPlayer(player)
+		socket.emit('players', players)
 	})
-
-	client.on('check-in', (checkIn) => socket.emit('check-in', checkIn))
 })
 
 server.listen(port, () => console.log(`Example app listening on port http://localhost:${port}/`))
