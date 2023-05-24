@@ -7,6 +7,7 @@ import helmet from 'helmet'
 import startPage from './routes/start-page.js'
 import partnersPage from './routes/partners-page.js'
 import { fontawesome } from './helpers/fontawesome.js'
+import { addPlayer, removePlayer } from './helpers/socket.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -38,6 +39,17 @@ app.use(partnersPage)
  * Create socket connection
  */
 socket.on('connection', (client) => {
+	const player = {
+		id: client.id,
+	}
+
+	addPlayer(player)
+	client.on('disconnect', () => removePlayer(player))
+
+	client.on('players', (player) => {
+		socket.emit('players', player)
+	})
+
 	client.on('check-in', (checkIn) => socket.emit('check-in', checkIn))
 })
 

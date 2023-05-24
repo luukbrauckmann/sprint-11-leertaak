@@ -8,6 +8,14 @@
 }
 
 .check-in {
-  background: deeppink;
+  background: #87ceeb;
+  border-bottom: 5rem solid #2a2922;
+}
+
+.bus {
+  height: 30rem;
+  width: 90%;
+  background: #2a2922;
+  border-bottom: 5rem solid #87ceeb;
 }
 

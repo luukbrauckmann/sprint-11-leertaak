@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#D4005B" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#D4005B" />
+    <meta name="keywords" content="Vervoerregio Amsterdam wcag" />
+    <meta name="description" content="Vervoerregio Amsterdam wcag" />
+    <meta
+      name="author"
+      content="Luuk Brauckmann, Sascha Davidson, Tom Poortman"
+    />
 
-  <meta name="keywords" content="Vervoerregio Amsterdam wcag" />
-  <meta name="description" content="Vervoerregio Amsterdam wcag" />
-  <meta name="author" content="Luuk Brauckmann, Sascha Davidson, Tom Poortman" />
+    <link rel="icon" type="image/png" href="./logo-favicon/va-favicon.svg" />
 
-  <link rel="icon" type="image/png" href="./logo-favicon/va-favicon.svg" />
+    <title><%- title %></title>
 
-  <title><%- title %></title>
+    <link rel="icon" type="image/svg" href="/logo-favicon/va-favicon.svg" />
+    <title><%- title %></title>
 
-  <link rel="icon" type="image/svg" href="/logo-favicon/va-favicon.svg" />
-  <title><%- title %></title>
+    <link rel="stylesheet" href="/styles/global.css" />
 
-  <link rel="stylesheet" href="/styles/global.css" />
-
-  <% for (let style of styles) { %>
+    <% for (let style of styles) { %>
     <link rel="stylesheet" href="/styles<%- style %>" />
     <% } %>
 
-      <script src="/socket.io/socket.io.js" defer></script>
-      <script src="/scripts/global.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/scripts/global.js" defer></script>
 
-      <% for (let script of scripts) { %>
-        <script src="/scripts<%- script %>" defer></script>
-        <% } %>
-</head>
+    <% for (let script of scripts) { %>
+    <script src="/scripts<%- script %>" defer></script>
+    <% } %>
 
+    <style>
+      <%- fas() %>
+    </style>
+  </head>
 
-<body>
-  <!-- prettier-ignore -->
-  <%- include('./partials/header.ejs') %>
+  <body>
+    <!-- prettier-ignore -->
+    <%- include('./partials/header.ejs') %>
     <%- include('./partials/main.ejs')%>
-      <%- include('./partials/footer.ejs') %>
-</body>
-
+    <%- include('./partials/footer.ejs') %>
+  </body>
 </html>
+
