@@ -59,7 +59,7 @@ Variables
   --font-family: Regular, san-serif;
   --spacing: 1rem;
 
-  --primary-color: rgb(212, 0, 91);
+  --primary-color: #b9005f;
 
   --success-color: rgb(34, 197, 94);
   --info-color: #3b82f6;
@@ -168,4 +168,6 @@ body > main {
     --max-screen-width: var(--breakpoint-xxl);
   }
 }
+
+
 
