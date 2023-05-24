@@ -39,17 +39,19 @@ app.use(partnersPage)
  * Create socket connection
  */
 socket.on('connection', (client) => {
-	const player = {
-		id: client.id,
-		checkedIn: false
-	}
+	const player = { id: client.id, checkedIn: false }
+
+	// Adds player to players array when client connects & emits new players array to all clients
 	addPlayer(player)
 	socket.emit('players', players)
+
+	// Removes player from players array when client disconnects & emits new players array to all clients
 	client.on('disconnect', () => {
 		removePlayer(client.id)
 		socket.emit('players', players)
 	})
 
+	// Updates player in players array when client checks in & emits new players array to all clients
 	client.on('players', (player) => {
 		setPlayer(player)
 		socket.emit('players', players)
