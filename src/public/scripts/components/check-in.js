@@ -7,3 +7,9 @@ parent.addEventListener("scroll", (event) => {
 	if (inView) checkInElement.classList.add('play')
 	else checkInElement.classList.remove('play')
 })
+
+socket.on('connect', () => {
+	socket.emit('players', { id: socket.id, skinColor: "lightgray", bodyColor: "grey", posX: "-50%", posY: "0%" })
+})
+
+socket.on('players', (changes) => console.log(changes));
