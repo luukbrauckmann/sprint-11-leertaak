@@ -9,14 +9,16 @@
 
 .check-in {
   background: #87ceeb;
-  border-bottom: 5rem solid #2a2922;
+  // border-bottom: 5rem solid #2a2922;
+  padding-inline: var(--body-padding);
 }
 
 .bus {
-  height: 30rem;
-  width: 90%;
-  background: #2a2922;
-  border-bottom: 5rem solid #87ceeb;
+  position: absolute;
+  min-width: 100rem;
+  height: auto;
+  bottom: 0;
+  right: var(--body-padding);
 }
 
 .check-in-button {
