@@ -9,7 +9,7 @@
 
 .check-in {
   background: #87ceeb;
-  // border-bottom: 5rem solid #2a2922;
+	/* border-bottom: 5rem solid #2a2922; */
   padding-inline: var(--body-padding);
 }
 
@@ -25,4 +25,74 @@
   position: absolute;
   right: 5rem;
   top: 10rem;
+}
+
+.move-in {
+  animation: move-in 1.5s ease forwards;
+}
+.move-in .rear,
+.move-in .front {
+  animation: rotate-in 1.5s ease forwards;
+}
+
+.move-out {
+  animation: move-out 1.5s ease forwards;
+}
+
+.move-out .rear,
+.move-out .front {
+  animation: rotate-out 1.5s ease forwards;
+}
+
+@keyframes move-in {
+  0% {
+    right: 100%;
+  }
+	80% {
+		right: calc(var(--body-padding) - 1rem);
+  }
+  100% {
+		right: var(--body-padding);
+  }
+}
+
+@keyframes move-out {
+  0% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  10% {
+    left: 50%;
+    transform: translateX(-51%);
+  }
+
+  100% {
+    left: 50%;
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes rotate-in {
+  0% {
+    transform: rotate(0)
+  }
+  90% {
+    transform: rotate(365deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes rotate-out {
+  0% {
+    transform: rotate(0deg)
+  }
+  10% {
+    transform: rotate(-5deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
 }
