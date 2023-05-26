@@ -40,10 +40,11 @@
 .move-out {
   animation: move-out 1.5s ease forwards;
 }
-
-.move-out .rear,
-.move-out .front {
+.move-out #wiel_links > g,
+.move-out #wiel_rechts > g {
   animation: rotate-out 1.5s ease forwards;
+	transform-box: fill-box;
+	transform-origin: center;
 }
 
 @keyframes move-in {
