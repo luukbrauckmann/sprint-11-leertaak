@@ -30,9 +30,11 @@
 .move-in {
   animation: move-in 1.5s ease forwards;
 }
-.move-in .rear,
-.move-in .front {
-  animation: rotate-in 1.5s ease forwards;
+.move-in #wiel_links > g,
+.move-in #wiel_rechts > g {
+	animation: rotate-in 1.5s ease forwards;
+	transform-box: fill-box;
+	transform-origin: center;
 }
 
 .move-out {
@@ -58,18 +60,15 @@
 
 @keyframes move-out {
   0% {
-    left: 50%;
-    transform: translateX(-50%);
+		transform: translateX(0%);
   }
 
-  10% {
-    left: 50%;
-    transform: translateX(-51%);
+  20% {
+		transform: translateX(-1rem);
   }
 
   100% {
-    left: 50%;
-    transform: translateX(100vw);
+		transform: translateX(calc(100% + var(--body-padding)));
   }
 }
 
@@ -77,7 +76,7 @@
   0% {
     transform: rotate(0)
   }
-  90% {
+  80% {
     transform: rotate(365deg)
   }
   100% {
@@ -89,7 +88,7 @@
   0% {
     transform: rotate(0deg)
   }
-  10% {
+  20% {
     transform: rotate(-5deg)
   }
   100% {
