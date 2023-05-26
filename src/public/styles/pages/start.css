@@ -9,18 +9,90 @@
 
 .check-in {
   background: #87ceeb;
-  border-bottom: 5rem solid #2a2922;
+	/* border-bottom: 5rem solid #2a2922; */
+  padding-inline: var(--body-padding);
 }
 
 .bus {
-  height: 30rem;
-  width: 90%;
-  background: #2a2922;
-  border-bottom: 5rem solid #87ceeb;
+  position: absolute;
+  min-width: 100rem;
+  height: auto;
+  bottom: 0;
+  right: var(--body-padding);
 }
 
 .check-in-button {
   position: absolute;
   right: 5rem;
   top: 10rem;
+}
+
+.move-in {
+  animation: move-in 1.5s ease forwards;
+}
+.move-in #wiel_links > g,
+.move-in #wiel_rechts > g {
+	animation: rotate-in 1.5s ease forwards;
+	transform-box: fill-box;
+	transform-origin: center;
+}
+
+.move-out {
+  animation: move-out 1.5s ease forwards;
+}
+.move-out #wiel_links > g,
+.move-out #wiel_rechts > g {
+  animation: rotate-out 1.5s ease forwards;
+	transform-box: fill-box;
+	transform-origin: center;
+}
+
+@keyframes move-in {
+  0% {
+    right: 100%;
+  }
+	80% {
+		right: calc(var(--body-padding) - 1rem);
+  }
+  100% {
+		right: var(--body-padding);
+  }
+}
+
+@keyframes move-out {
+  0% {
+		transform: translateX(0%);
+  }
+
+  20% {
+		transform: translateX(-1rem);
+  }
+
+  100% {
+		transform: translateX(calc(100% + var(--body-padding)));
+  }
+}
+
+@keyframes rotate-in {
+  0% {
+    transform: rotate(0)
+  }
+  80% {
+    transform: rotate(365deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes rotate-out {
+  0% {
+    transform: rotate(0deg)
+  }
+  20% {
+    transform: rotate(-5deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
 }

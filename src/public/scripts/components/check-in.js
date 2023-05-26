@@ -1,4 +1,5 @@
 let players = []
+let departureTime = 30
 
 const checkInElement = document.querySelector('.check-in')
 
@@ -16,14 +17,17 @@ checkInDevice.addEventListener('click', () => checkIn())
 checkIn = () => {
 	const { id } = socket
 	let player = players.find(player => player.id === id)
-	console.log(player);
 	player.checkedIn = true
 	socket.emit('players', player)
 }
 
-socket.on('players', (newPlayers) => {
-	players = newPlayers
-	console.log(players);
+socket.on('players', (newPlayers) => players = newPlayers)
+socket.on('departure-time', (newDepartureTime) => {
+	departureTime = newDepartureTime
+
+	console.log(departureTime)
 })
+
+
 
 
