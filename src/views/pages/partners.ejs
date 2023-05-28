@@ -134,24 +134,30 @@
 
       <section class="projects-overview">
 
-        <!-- project template -->
-        <section class="project">
-          <div class="project-info">
-            <img src="" alt="favicon logo">
-            <h3>Project titel</h3>
-            <a href="#">project.link.nl</a>
-          </div>
+        <% projectsData.urls.forEach(project=> { %>
 
-          <div class="project-progression">
-            <p>Algehele progressie: </p>
-            <span>
-              <meter value="15" max="61"></meter>
-              15/61
-            </span>
-          </div>
+          <!-- project template -->
+          <section class="project">
+            <div class="project-info">
+              <img width="54" src="<%= `${faviconAPI}${project.url}/&size=256` %>" alt="">
+              <h3>
+                <%= project.website.titel %>
+              </h3>
+              <a href="#"><%= project.url %></a>
+            </div>
 
-          <button class="more">...</button>
-        </section>
+            <div class="project-progression">
+              <p>Algehele progressie: </p>
+              <span>
+                <meter value="15" max="61"></meter>
+                15/61
+              </span>
+            </div>
+
+            <button class="more">...</button>
+          </section>
+          <% }) %>
+
 
       </section>
 
