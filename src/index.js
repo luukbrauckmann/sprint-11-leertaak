@@ -7,7 +7,7 @@ import helmet from 'helmet'
 import startPage from './routes/start-page.js'
 import partnersPage from './routes/partners-page.js'
 import { fontawesome } from './helpers/fontawesome.js'
-import { addPlayer, removePlayer, players, setPlayer, departureTime } from './helpers/socket.js'
+import { addPlayer, removePlayer, players, setPlayer, departureTime, departureTimer } from './helpers/socket.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -58,5 +58,8 @@ socket.on('connection', (client) => {
 		socket.emit('players', players)
 	})
 })
+
+// Start departure timer
+departureTimer(socket)
 
 server.listen(port, () => console.log(`Example app listening on port http://localhost:${port}/`))

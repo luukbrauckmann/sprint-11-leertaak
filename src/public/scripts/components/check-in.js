@@ -1,7 +1,9 @@
 let players = []
 let departureTime = 30
 
+const departureTimeElement = document.querySelector('#departure-time')
 const checkInElement = document.querySelector('.check-in')
+const bus = document.querySelector('.bus')
 
 const parent = checkInElement.parentElement
 parent.addEventListener("scroll", (event) => {
@@ -24,8 +26,12 @@ checkIn = () => {
 socket.on('players', (newPlayers) => players = newPlayers)
 socket.on('departure-time', (newDepartureTime) => {
 	departureTime = newDepartureTime
+	departureTimeElement.innerText = departureTime
 
-	console.log(departureTime)
+	if (departureTime === 0) {
+		bus.classList.replace('move-in', 'move-out')
+		setTimeout(() => bus.classList.replace('move-out', 'move-in'), 1500)
+	}
 })
 
 
