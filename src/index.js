@@ -7,7 +7,7 @@ import helmet from 'helmet'
 import startPage from './routes/start-page.js'
 import partnersPage from './routes/partners-page.js'
 import { fontawesome } from './helpers/fontawesome.js'
-import { addPlayer, removePlayer, players, setPlayer, departureTime, departureTimer } from './helpers/socket.js'
+import { addPlayer, removePlayer, players, setPlayer, departureTime, departureTimer, seats, assignPlayerToSeat } from './helpers/socket.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -45,6 +45,7 @@ socket.on('connection', (client) => {
 	addPlayer(player)
 	socket.emit('players', players)
 	socket.emit('departure-time', departureTime)
+	socket.emit('seats', seats)
 
 	// Removes player from players array when client disconnects & emits new players array to all clients
 	client.on('disconnect', () => {
@@ -56,6 +57,12 @@ socket.on('connection', (client) => {
 	client.on('players', (player) => {
 		setPlayer(player)
 		socket.emit('players', players)
+	})
+
+	// Updates player in players array when client checks in & emits new players array to all clients
+	client.on('seats', (player) => {
+		assignPlayerToSeat(player)
+		socket.emit('seats', seats)
 	})
 })
 

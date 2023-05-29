@@ -1,4 +1,5 @@
 let players = []
+let seats = []
 let departureTime = 30
 
 const departureTimeElement = document.querySelector('#departure-time')
@@ -21,9 +22,20 @@ checkIn = () => {
 	let player = players.find(player => player.id === id)
 	player.checkedIn = true
 	socket.emit('players', player)
+	socket.emit('seats', player)
 }
 
 socket.on('players', (newPlayers) => players = newPlayers)
+socket.on('seats', (newSeats) => {
+	seats = newSeats
+
+	for (let seat of seats) {
+		const seatElement = document.querySelector(`.checked-in-user--${seat.id}`)
+		const seatIsAssigned = seat.player !== null
+		if (seatIsAssigned) seatElement.classList.add('checked-in-user--assigned')
+		else seatElement.classList.remove('checked-in-user--assigned')
+	}
+})
 socket.on('departure-time', (newDepartureTime) => {
 	departureTime = newDepartureTime
 	departureTimeElement.innerText = departureTime
