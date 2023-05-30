@@ -1,3 +1,72 @@
+.hero{
+	height: 50vh;
+	height: 50svh;
+	max-height: 40em;
+	min-height: 25em;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/image/vervoerregio-amsterdam-header.jpg");
+	background-image: linear-gradient(90deg, rgba(0,0,0,0.9137780112044818) 0%, rgba(0,0,0,0.7569152661064426) 15%, rgba(0,0,0,0) 47%), url("/image/vervoerregio-amsterdam-header4.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	padding: 0 var(--body-padding);
+}
+
+.map{
+	width: 100%;
+	max-width: 30em;
+	aspect-ratio: 4/2;
+	background-color: #41decef5;
+	position: relative;
+	margin-top: 3em;
+	padding: 1em 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 0 10px 10px 10px;
+}
+
+.map h1{
+	color: white;
+	font-size: clamp(2rem, 8vw, 3rem); 
+}
+
+.map h1 span{
+	font-size: clamp(2.5rem, 9vw, 4rem); 
+}
+
+.map .upper-curve{
+	position: absolute;
+	height: 3em;
+	left: 0;
+	top: -3em;
+	display: flex;
+	width: 100%;
+}
+
+.map .balk{
+	width: calc(50% - 3em);
+	height: inherit;
+	background-color: #41decef5;
+	display: block;
+	border-radius: 10px 0 0 0;
+}
+
+.header-map-curve{
+	fill: #41decef5;
+}
+
+
+.start-content{
+	height: 50vh;
+}
+
+
+
+
+
+
 .start {
   overflow: auto;
   scroll-snap-type: y mandatory;
@@ -9,9 +78,14 @@
 
 .check-in {
   background: #87ceeb;
+  background: linear-gradient(0deg, rgba(135,206,235,1) 81%, rgba(135,206,235,0) 100%);
+
 	/* border-bottom: 5rem solid #2a2922; */
   padding-inline: var(--body-padding);
-  position: relative;
+
+  height: 40em;
+  overflow-x: hidden;
+
 }
 
 .page.check-in .page__header {
@@ -217,6 +291,10 @@
 	transform: translateY(-90%);
 }
 
+@media (min-width: 20rem) {
+	.map{
+		padding: 1em 2em;
+
 @media (min-width: 62rem) {
 	.start {
 		overflow: auto;
@@ -226,6 +304,6 @@
   .start > .page {
 		scroll-snap-align: start;
 		margin-top: 90.63px;
-		height: calc(100vh - 90.63px);
+
 	}
 }
