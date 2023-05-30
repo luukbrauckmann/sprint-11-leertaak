@@ -18,6 +18,11 @@
 
 body {
     background-color: var(--c-achtergrond);
+    height: fit-content;
+}
+
+h3 {
+    color: initial;
 }
 
 
@@ -28,7 +33,7 @@ body {
 */
 
 :root {
-    --xsmall-size: .2rem;
+    --xsmall-size: 2px;
     --small-size: .5rem;
     --medium-size: 1.2rem;
     --large-size: 1.7rem;
@@ -38,8 +43,10 @@ body {
     --medium-radius: 6px;
     --large-radius: 18px;
 
-    --c-container: #E6E6E6;
+    --c-container: #cdcdcd;
     --c-achtergrond: #ffffff;
+
+    --container-border: 1px solid var(--c-container);
 }
 
 
@@ -56,7 +63,7 @@ body {
     gap: var(--medium-size);
     width: 100%;
     padding: var(--medium-size) 0;
-    border-bottom: 1px solid var(--c-container);
+    border-bottom: var(--container-border);
 }
 
 .filter-container * {
@@ -65,7 +72,7 @@ body {
 }
 
 .filter-container :is(.filter details, .sorting select, #new-project) {
-    border: 1px solid var(--c-container);
+    border: var(--container-border);
     border-radius: var(--small-radius);
     padding: var(--small-size);
 }
@@ -117,13 +124,21 @@ body {
     padding: 2px var(--medium-size);
     border-radius: var(--large-radius);
     border: 1px solid #DD296D;
-    background: rgba(221, 41, 109, 0.05);
+    background: rgba(221, 41, 109, 0.03);
 }
 
 .filter-container .filter details summary {
     margin: calc(-1 * var(--small-size));
     padding: var(--small-size);
     min-width: 15.8rem;
+}
+
+.filter-container .filter details {
+    transition: 200ms;
+}
+
+.filter-container .filter details[open] {
+    margin-bottom: var(--small-size) !important;
 }
 
 .filter-container #new-project {
@@ -147,7 +162,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-right: 1px solid var(--c-container);
+    border-right: var(--container-border);
     padding-right: var(--medium-size);
 }
 
@@ -159,7 +174,7 @@ body {
 .filter-container .sorting .sorter {
     display: flex;
     gap: var(--small-size);
-    border-right: 1px solid var(--c-container);
+    border-right: var(--container-border);
     padding-right: var(--small-size);
 }
 
@@ -178,13 +193,80 @@ body {
 
 .projects-overview {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17.3rem, 1fr));
     gap: var(--small-size);
 }
 
 .projects-overview .project {
-    border: 1px solid var(--c-container);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--large-size);
+    border: var(--container-border);
     border-radius: var(--small-radius);
+    padding: var(--small-size);
+}
+
+.projects-overview .project>* {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--xsmall-size);
+}
+
+.projects-overview .project .project-info img {
+    height: auto;
+}
+
+.projects-overview .project .project-info .project-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--xsmall-size);
+}
+
+.projects-overview .project .project-info a {
+    position: relative;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 82%;
+    z-index: 1;
+}
+
+.projects-overview .project .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: var(--small-size);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.projects-overview .project .more:active {
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+
+.projects-overview .project .project-progression span {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: var(--small-size);
+    width: 100%;
+}
+
+.projects-overview .project .project-progression span meter {
+    width: 100%;
+    height: var(--medium-size);
+}
+
+.projects-overview .project .project-progression span meter::-webkit-meter-optimum-value {
+    background-color: var(--primary-color);
 }
 
 
@@ -207,6 +289,10 @@ body {
 }
 
 @media only screen and (max-width: 48rem) {
+    .projects-overview .project {
+        gap: var(--xlarge-size);
+    }
+
     .filter-container :is(.filter details, .sorting select) {
         width: 100%;
     }
@@ -231,6 +317,10 @@ body {
 }
 
 @media only screen and (max-width: 36rem) {
+    .page__content {
+        padding: 1rem var(--small-size)
+    }
+
     .filter-container .sorting .sorter {
         padding: 0;
     }
