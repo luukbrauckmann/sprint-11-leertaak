@@ -14,12 +14,28 @@
   position: relative;
 }
 
+.page.check-in .page__header {
+	padding-top: 5rem;
+}
+
+.page.check-in .page__header h2 {
+	font-size: 5rem;
+}
+
+.page.check-in .page__content {
+	position: relative;
+	border-bottom: 5rem solid #2a2922;
+	padding-bottom: 0;
+	height: calc(440.2px + 7rem);
+}
+
 .bus {
   position: absolute;
   min-width: 100rem;
   height: auto;
   bottom: 0;
   right: var(--body-padding);
+	transform: translateY(1rem);
 }
 
 .check-in-button {
@@ -199,4 +215,17 @@
 	top: 50%;
 	left: 77rem;
 	transform: translateY(-90%);
+}
+
+@media (min-width: 62rem) {
+	.start {
+		overflow: auto;
+		scroll-snap-type: y mandatory;
+	}
+
+  .start > .page {
+		scroll-snap-align: start;
+		margin-top: 90.63px;
+		height: calc(100vh - 90.63px);
+	}
 }
