@@ -10,7 +10,14 @@
 .check-in {
   background: #87ceeb;
 	/* border-bottom: 5rem solid #2a2922; */
-  padding-inline: var(--body-padding);
+}
+
+.page.check-in .page__header {
+	padding-top: 5rem;
+}
+
+.page.check-in .page__header h2 {
+	font-size: 5rem;
 }
 
 .bus {
