@@ -4,13 +4,14 @@
 }
 
 .start > .page {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 .check-in {
   background: #87ceeb;
 	/* border-bottom: 5rem solid #2a2922; */
   padding-inline: var(--body-padding);
+  position: relative;
 }
 
 .bus {
