@@ -29,11 +29,11 @@
 
 .map h1{
 	color: white;
-	font-size: clamp(2rem, 8vw, 3rem); 
+	font-size: clamp(2rem, 8vw, 3rem);
 }
 
 .map h1 span{
-	font-size: clamp(2.5rem, 9vw, 4rem); 
+	font-size: clamp(2.5rem, 9vw, 4rem);
 }
 
 .map .upper-curve{
@@ -81,9 +81,8 @@
   background: linear-gradient(0deg, rgba(135,206,235,1) 81%, rgba(135,206,235,0) 100%);
 
 	/* border-bottom: 5rem solid #2a2922; */
-  padding-inline: var(--body-padding);
 
-  height: 40em;
+  height: 50rem;
   overflow-x: hidden;
 
 }
@@ -100,7 +99,6 @@
 	position: relative;
 	border-bottom: 5rem solid #2a2922;
 	padding-bottom: 0;
-	height: calc(440.2px + 7rem);
 }
 
 .bus {
