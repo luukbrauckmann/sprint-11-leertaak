@@ -73,7 +73,7 @@
 }
 
 .start > .page {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 .check-in {
@@ -82,9 +82,25 @@
 
 	/* border-bottom: 5rem solid #2a2922; */
   padding-inline: var(--body-padding);
-  position: relative;
+
   height: 40em;
   overflow-x: hidden;
+
+}
+
+.page.check-in .page__header {
+	padding-top: 5rem;
+}
+
+.page.check-in .page__header h2 {
+	font-size: 5rem;
+}
+
+.page.check-in .page__content {
+	position: relative;
+	border-bottom: 5rem solid #2a2922;
+	padding-bottom: 0;
+	height: calc(440.2px + 7rem);
 }
 
 .bus {
@@ -93,6 +109,7 @@
   height: auto;
   bottom: 0;
   right: var(--body-padding);
+	transform: translateY(1rem);
 }
 
 .check-in-button {
@@ -277,5 +294,16 @@
 @media (min-width: 20rem) {
 	.map{
 		padding: 1em 2em;
+
+@media (min-width: 62rem) {
+	.start {
+		overflow: auto;
+		scroll-snap-type: y mandatory;
+	}
+
+  .start > .page {
+		scroll-snap-align: start;
+		margin-top: 90.63px;
+
 	}
 }

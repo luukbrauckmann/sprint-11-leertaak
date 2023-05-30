@@ -1,3 +1,5 @@
+// const { text } = require("@fortawesome/fontawesome-svg-core");
+
 document.documentElement.classList.add('js-enabled')
 
 var socket = io()
@@ -16,5 +18,10 @@ ul.classList.add("ul-js");
 menuBtn.hidden = false;
 menuBtn.addEventListener("click", () => {
     navContainer.classList.toggle("nav-active");
-    searchBar.classList.toggle("search-bar-active");
+});
+
+window.addEventListener(`load`, () =>{
+    const year = document.getElementById(`currentYear`);
+    let date = new Date();
+    year.innerHTML = date.getFullYear();
 });
