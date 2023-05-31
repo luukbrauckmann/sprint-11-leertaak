@@ -51,9 +51,11 @@ Fonts
 }
 
 /*
-====================
-Variables
+===============================
+✨ VARIABLES
+===============================
 */
+
 :root {
   --font-size: 1em;
   --font-family: Regular, san-serif;
@@ -80,6 +82,22 @@ Variables
   --breakpoint-xxl: 90rem;
 
   --heading-font: Medium, san-serif;
+
+
+  --xsmall-size: 2px;
+  --small-size: .5rem;
+  --medium-size: 1.2rem;
+  --large-size: 1.7rem;
+  --xlarge-size: 3rem;
+
+  --small-radius: 4px;
+  --medium-radius: 6px;
+  --large-radius: 18px;
+
+  --c-container: #cdcdcd;
+  --c-achtergrond: #ffffff;
+
+  --container-border: 1px solid var(--c-container);
 }
 
 /*

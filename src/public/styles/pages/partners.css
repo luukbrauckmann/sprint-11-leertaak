@@ -29,31 +29,6 @@ h3 {
     color: initial;
 }
 
-
-/*
-===============================
-✨ VARIABLES
-===============================
-*/
-
-:root {
-    --xsmall-size: 2px;
-    --small-size: .5rem;
-    --medium-size: 1.2rem;
-    --large-size: 1.7rem;
-    --xlarge-size: 3rem;
-
-    --small-radius: 4px;
-    --medium-radius: 6px;
-    --large-radius: 18px;
-
-    --c-container: #cdcdcd;
-    --c-achtergrond: #ffffff;
-
-    --container-border: 1px solid var(--c-container);
-}
-
-
 /*
 ===============================
 📃 FILTER BAR

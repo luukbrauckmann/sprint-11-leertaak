@@ -12,7 +12,7 @@
 
 .new-checklist-container .new-checklist-form {
   padding: 2em;
-  border: 2px solid var(--primary-color);
+  border: var(--container-border);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -47,8 +47,7 @@
 .new-checklist-container .label-form input[type="url"] {
   padding: 0.5rem;
   border-radius: 5px;
-  border: 2px solid lightgray;
-}
+  border: var(--container-border);}
 
 .form-button {
   display: flex;
@@ -63,7 +62,7 @@
   color: white;
   cursor: pointer;
   font-size: 1rem;
-  padding: 1rem;
+  padding: .5rem;
   width: fit-content;
   font-family: Regular, san-serif;
   transition: all 0.2s ease-in-out;
