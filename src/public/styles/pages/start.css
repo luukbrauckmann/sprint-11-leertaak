@@ -77,12 +77,11 @@
 }
 
 .check-in {
+	height: 72rem;
   background: #87ceeb;
   background: linear-gradient(0deg, rgba(135,206,235,1) 81%, rgba(135,206,235,0) 100%);
 
 	/* border-bottom: 5rem solid #2a2922; */
-
-  height: 50rem;
   overflow-x: hidden;
 
 }
@@ -125,10 +124,11 @@
 }
 
 .check-in-device {
-  width: 20rem;
+	width: 20rem;
 	position: absolute;
-	right: var(--body-padding);
-	top: -8rem;
+	right: 50%;
+	transform: translateX(50%);
+	top: 0rem;
 }
 
 .check-in-device--loading {}
@@ -243,12 +243,18 @@
 		scroll-snap-align: start;
 	}
 
+	.check-in {
+		height: auto;
+	}
+
 	.sub {
     width: 14rem;
 	}
 
 	.check-in-device {
+		right: var(--body-padding);
     top: -11rem;
+		transform: unset;
 	}
 }
 
