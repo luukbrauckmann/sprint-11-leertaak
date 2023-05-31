@@ -87,7 +87,7 @@
 }
 
 .page.check-in .page__header {
-	padding-top: 5rem;
+	padding-top: 12rem;
 }
 
 .page.check-in .page__header h2 {
@@ -133,7 +133,11 @@
 
 .check-in-device--loading {}
 
-.check-in-device--error  .check-in-st0 {
+.check-in-device .check-in-st0 {
+	transition: fill .2s ease-in-out;
+}
+
+.check-in-device--error .check-in-st0 {
 	fill: var(--error-color);
 }
 
@@ -247,18 +251,22 @@
 
 	.check-in-device {
 		right: var(--body-padding);
-    top: -11rem;
+    top: -9rem;
 		transform: unset;
 	}
 }
 
 @media (min-width: 48rem) {
+	.page.check-in .page__header {
+    padding-top: 12rem;
+	}
+
 	.sub {
 		width: 26rem;
 	}
 
 	.check-in-device {
-		top: -8rem;
+		top: -15rem;
 	}
 }
 
