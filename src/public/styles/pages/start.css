@@ -114,6 +114,10 @@
   display: var(--display);
 }
 
+.sub p {
+	padding-bottom: 1rem;
+}
+
 .bus {
   position: absolute;
   min-width: 100rem;
@@ -133,6 +137,9 @@
   right: 50%;
   transform: translateX(50%);
   top: 0rem;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
 }
 
 .check-in-device--loading {
@@ -278,7 +285,7 @@
 
   .check-in-device {
     right: var(--body-padding);
-    top: -9rem;
+    top: -18rem;
     transform: unset;
   }
 }
@@ -291,9 +298,8 @@
   .sub {
     width: 26rem;
   }
-
-  .check-in-device {
-    top: -15rem;
+	.check-in-device {
+    top: -22rem;
   }
 }
 
