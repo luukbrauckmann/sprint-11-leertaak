@@ -16,10 +16,6 @@
     gap: var(--medium-size);
 }
 
-.partner__content{
-    margin-bottom: 4rem;
-}
-
 body {
     background-color: var(--c-achtergrond);
     height: fit-content;
@@ -28,6 +24,31 @@ body {
 h3 {
     color: initial;
 }
+
+
+/*
+===============================
+✨ VARIABLES
+===============================
+*/
+
+:root {
+    --xsmall-size: 2px;
+    --small-size: .5rem;
+    --medium-size: 1.2rem;
+    --large-size: 1.7rem;
+    --xlarge-size: 3rem;
+
+    --small-radius: 4px;
+    --medium-radius: 6px;
+    --large-radius: 18px;
+
+    --c-container: #cdcdcd;
+    --c-achtergrond: #ffffff;
+
+    --container-border: 1px solid var(--c-container);
+}
+
 
 /*
 ===============================
@@ -85,10 +106,11 @@ h3 {
 }
 
 .filter-container .filter .filters .partner-chips {
+    display: flex;
+    justify-content: start;
     margin-bottom: auto;
     padding: 2px 0;
     overflow: auto;
-    white-space: nowrap;
 }
 
 .partner-chips::-webkit-scrollbar {
@@ -101,10 +123,23 @@ h3 {
 }
 
 .filter-container .filter .filters .partner-chips .partner-chip {
+    display: none;
+    white-space: nowrap;
     padding: 2px var(--medium-size);
     border-radius: var(--large-radius);
     border: 1px solid #DD296D;
     background: rgba(221, 41, 109, 0.03);
+}
+
+.filter-container .filter .filters .partner-chips .partner-chip.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-container .filter .filters .partner-chips .partner-chip.active:hover {
+    background: rgba(221, 41, 109, 0.15);
 }
 
 .filter-container .filter details summary {
@@ -186,6 +221,11 @@ h3 {
     border: var(--container-border);
     border-radius: var(--small-radius);
     padding: var(--small-size);
+    cursor: pointer;
+}
+
+.projects-overview .project:hover {
+    transform: scale(1.01);
 }
 
 .projects-overview .project>* {

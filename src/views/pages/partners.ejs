@@ -2,17 +2,7 @@
   <header class="page__header">
     <h1>Partners</h1>
   </header>
-  <div class="page__content partner__content">
-    <form action="/partners">
-      <fieldset>
-        <% for(let partner of partners) { %>
-        <div>
-          <input type="checkbox" value="<%- partner.homepage %>" id="" />
-          <label for=""><%- partner.titel %></label>
-        </div>
-        <% } %>
-      </fieldset>
-    </form>
+  <div class="page__content">
 
     <div class="filter-container">
       <section class="filter">
@@ -21,44 +11,31 @@
         <div class="filters">
           <details>
             <summary>Partners</summary>
-            <fieldset name="filter">
-              <label>
-                <input
-                  type="checkbox"
-                  value="vervoerregio-amsterdam"
-                  id=""
-                />Vervoerregio Amsterdam
-              </label>
-              <label> <input type="checkbox" value="gvb" id="" />GVB </label>
-              <label> <input type="checkbox" value="9292" id="" />9292 </label>
+            <form action="/partners">
+              <fieldset name="filter">
+              <% for(let partner of partners) { %>
+                
+                  <label><input type="checkbox" value="<%= partner.id %>" id="checkbox-<%= partner.id %>" /><%= partner.titel %></label>
+                
+                <% } %>
             </fieldset>
+            <button>Filteren</button>
+            </form>
+            
           </details>
 
           <div class="partner-chips">
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
-            <div class="partner-chip"> GVB </div>
+            <% for(let partner of partners) { %>
+                
+              <div class="partner-chip" id="chip-<%= partner.id %>" data-id="<%= partner.id %>">
+                <%= partner.titel %>
+                <!-- <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 12L1 1M12 1L1 12" stroke="#3D3D3D" stroke-width="2" stroke-linecap="round"/>
+                  </svg> -->
+                  X
+              </div>
+            
+            <% } %>
           </div>
         </div>
       </section>
@@ -67,7 +44,7 @@
         <section class="sorting">
           <h2>Sorteren op: </h2>
 
-          <div class="sorter">
+          <form class="sorter">
             <select name="field" id="">
               <option value="titel">Titel</option>
               <option value="datum">Datum</option>
@@ -78,7 +55,7 @@
               <option value="asc">Oplopend</option>
               <option value="desc">Aflopend</option>
             </select>
-          </div>
+          </form>
         </section>
 
         <button id="new-project">Nieuw project +</button>
