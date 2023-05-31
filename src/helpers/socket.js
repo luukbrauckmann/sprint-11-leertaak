@@ -25,7 +25,7 @@ export const departureTimer = (socket) => {
 export const assignPlayerToSeat = (player) => {
 	const alreadyAssigned = seats.find(seat => seat.player === player.id)
 	if (alreadyAssigned) return
-	const seat = seats.find(seat => seat.player === null)
+	const seat = seats.findLast(seat => seat.player === null)
 	if (seat) seat.player = player.id
 	const avalableSeats = seats.filter(seat => seat.player !== null)
 	if (avalableSeats.length === 18) departureTime = 1

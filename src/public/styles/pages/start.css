@@ -110,10 +110,21 @@
 	transform: translateY(1rem);
 }
 
-.check-in-button {
-  position: absolute;
-  right: 5rem;
-  top: 10rem;
+.check-in-device {
+  width: 20rem;
+	position: absolute;
+	right: var(--body-padding);
+	top: -8rem;
+}
+
+.check-in-device--loading {}
+
+.check-in-device--error  .check-in-st0 {
+	fill: var(--error-color);
+}
+
+.check-in-device--success .check-in-st0 {
+	fill: var(--success-color);
 }
 
 .move-in {
