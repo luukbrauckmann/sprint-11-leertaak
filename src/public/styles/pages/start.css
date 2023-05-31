@@ -289,9 +289,9 @@
 	transform: translateY(-90%);
 }
 
-@media (min-width: 20rem) {
+/* @media (min-width: 20rem) {
 	.map{
-		padding: 1em 2em;
+		padding: 1em 2em; */
 
 @media (min-width: 62rem) {
 	.start {
