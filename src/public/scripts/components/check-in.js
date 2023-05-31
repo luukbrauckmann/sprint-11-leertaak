@@ -14,15 +14,23 @@ parent.addEventListener("scroll", (event) => {
 	else checkInElement.classList.remove('play')
 })
 
-const checkInDevice = document.querySelector('.check-in-button')
+const checkInDevice = document.querySelector('.check-in-device')
 checkInDevice.addEventListener('click', () => checkIn())
 
 checkIn = () => {
 	const { id } = socket
+
+	// Check if player is already checked in
+	const alreadyAssigned = seats.find(seat => seat.player === id)
+	if (alreadyAssigned) return
+
 	let player = players.find(player => player.id === id)
 	player.checkedIn = true
 	socket.emit('players', player)
 	socket.emit('seats', player)
+
+	checkInDevice.classList.add('check-in-device--success')
+	setTimeout(() => checkInDevice.classList.remove('check-in-device--success'), 1500);
 }
 
 socket.on('players', (newPlayers) => players = newPlayers)
