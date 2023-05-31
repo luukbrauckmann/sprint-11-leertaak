@@ -9,9 +9,19 @@ const options = {
 	styles: ['/pages/start.css'],
 	scripts: ['/components/check-in.js'],
 	hostClass: 'start',
-	messages: []
+	messages: [],
+	data: []
 }
 
-startPage.get(options.path, (request, response) => response.render('index', options))
+function getData(){
+	return fetch("https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/websites")
+		.then((res) => res.json())
+
+}
+
+startPage.get(options.path, async (request, response) => {
+	options.data = await getData()
+	return response.render('index', options)
+})
 
 export default startPage

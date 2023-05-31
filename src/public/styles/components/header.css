@@ -31,6 +31,7 @@ body > header .menu {
   padding: 0.8rem;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 1em;
 }
 
 body > header .nav-js-style {
@@ -57,10 +58,11 @@ body > header nav {
 }
 
 body > header nav .menu__menu-item {
-  padding: 1rem .5em;
+  padding: 1.5rem;
   height: fit-content;
   width: fit-content;
   white-space: nowrap;
+  width: 100%;
 }
 
 body > header .nav-design {
@@ -82,6 +84,8 @@ body > header ul {
 
 body > header ul li {
   list-style-type: none;
+  display: flex;
+  align-items: center;
 }
 
 body > header ul li a {
@@ -110,7 +114,8 @@ body > header ul li .new-checklist {
   cursor: pointer;
   font-size: 1rem;
   padding: 1rem;
-  width: 100%;
+  width: calc(100% - 1em);
+  margin: 0 0.5em;
   font-family: Regular, san-serif;
   display: flex;
   gap: .5em;
@@ -125,12 +130,13 @@ body > header ul li .new-checklist:is(:hover, :focus) {
   border: 2px solid var(--primary-color);
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 530px) {
   body > header nav ul {
     flex-direction: row;
     justify-content: space-between;
     padding: 0.3rem 0;
   }
+
 }
 
 @media screen and (min-width: 770px) {
@@ -180,5 +186,10 @@ body > header ul li .new-checklist:is(:hover, :focus) {
 
   body > header nav ul li {
     padding: 0;
+  }
+
+  body > header ul li .new-checklist {
+    width: 100%;
+    margin: 0;
   }
 }

@@ -1,8 +1,8 @@
-document.documentElement.classList.add('js-enabled')
+document.documentElement.classList.add("js-enabled");
 
-var socket = io()
+var socket = io();
 
-socket.on('check-in', (changes) => console.log(changes));
+socket.on("check-in", (changes) => console.log(changes));
 
 const nav = document.querySelector("nav");
 const navContainer = document.querySelector("#nav-id-container");
@@ -15,11 +15,37 @@ ul.classList.add("ul-js");
 
 menuBtn.hidden = false;
 menuBtn.addEventListener("click", () => {
-	navContainer.classList.toggle("nav-active");
+  navContainer.classList.toggle("nav-active");
 });
 
 window.addEventListener(`load`, () => {
-	const year = document.getElementById(`currentYear`);
-	let date = new Date();
-	year.innerHTML = date.getFullYear();
+  const year = document.getElementById(`currentYear`);
+  let date = new Date();
+  year.innerHTML = date.getFullYear();
 });
+
+if ("showModal" in document.createElement("dialog")) {
+  const showDialog = document.getElementById("new-card-button");
+  const newCard = document.getElementById("new-checklist");
+  const closeBtn = document.getElementById("close");
+  const newDialog = document.createElement("dialog");
+  const newChecklistContainer = document.querySelector(".new-checklist-container");
+  const newChecklistForm = document.querySelector(".new-checklist-form");
+
+  newDialog.className = "new-card-dialog";
+  newDialog.append(newCard);
+  document.body.append(newDialog);
+
+  showDialog.addEventListener("click", (event) => {
+    newDialog.showModal();
+    event.preventDefault();
+  });
+
+  newChecklistContainer.classList.add("new-checklist-container--js");
+  newChecklistForm.classList.add("new-checklist-form--js");
+
+  closeBtn.hidden = false;
+  closeBtn.addEventListener("click", () => {
+    newDialog.close();
+  });
+};

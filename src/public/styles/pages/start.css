@@ -36,18 +36,18 @@
 
 .map h1 {
   color: white;
-  font-size: clamp(2rem, 8vw, 3rem);
+  font-size: clamp(1.5rem, 8vw, 3rem);
 }
 
 .map h1 span {
-  font-size: clamp(2.5rem, 9vw, 4rem);
+  font-size: clamp(2rem, 11vw, 4rem);
 }
 
 .map .upper-curve {
   position: absolute;
-  height: 3em;
+  height: 2em;
   left: 0;
-  top: -3em;
+  top: -2em;
   display: flex;
   width: 100%;
 }
@@ -64,18 +64,14 @@
   fill: #41decef5;
 }
 
-.start-content {
-  height: 50vh;
-}
-
 .start {
   overflow: auto;
   scroll-snap-type: y mandatory;
 }
 
-.start > .page {
-  /* scroll-snap-align: start; */
-}
+/* .start > .page {
+  scroll-snap-align: start;
+} */
 
 .check-in {
   height: 72rem;
@@ -102,6 +98,7 @@
   position: relative;
   border-bottom: 5rem solid #2a2922;
   padding-bottom: 0;
+  /* min-height: 550px; */
 }
 
 #departure-time {
@@ -135,8 +132,8 @@
   top: 0rem;
 }
 
-.check-in-device--loading {
-}
+/* .check-in-device--loading {
+} */
 
 .check-in-device .check-in-st0 {
   transition: fill 0.2s ease-in-out;

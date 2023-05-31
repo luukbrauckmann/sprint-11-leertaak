@@ -1,0 +1,33 @@
+<section id="new-checklist" class="new-checklist-container">
+    <form id="new-checklist-form" class="new-checklist-form" method="post">
+        <h2>Maak een nieuwe checklist</h2>
+        <% if (typeof(newdata) !='undefined' ) { %>
+            Er ging iets mis hoor, sorry. <%= newdata.error %>
+                <% } %>
+                    <div class="form-menu">
+                        <div class="label-form">
+                            <label for="name">Kies een Partner *</span></label>
+                            <select id="name" name="websiteId">
+                                <% data.websites.forEach(website=> { %>
+                                    <option value="<%= website.id  %>">
+                                        <%= website.titel %>
+                                    </option>
+                                    <%})%>
+                            </select>
+                        </div>
+
+                        <div class="label-form">
+                            <label for="title">Bestands naam *</label>
+                            <input id="title" type="text">
+                        </div>
+                    </div>
+                    <div class="label-form">
+                        <label for="name">plaats een url *</label>
+                        <input id="name" type="url" required name="url">
+                    </div>
+                    <div class="form-button">
+                        <input class="basic-button" type="submit">
+                        <button hidden class="basic-button button-dialog" id="close" value="cancel">annuleren</button>
+                    </div>
+    </form>
+</section>
