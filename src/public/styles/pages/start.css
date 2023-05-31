@@ -77,8 +77,8 @@
   /* scroll-snap-align: start; */
 }
 
-.check-in {
-  height: 72rem;
+.page.check-in {
+  min-height: unset;
   background: #87ceeb;
   background: linear-gradient(
     0deg,
@@ -102,6 +102,7 @@
   position: relative;
   border-bottom: 5rem solid #2a2922;
   padding-bottom: 0;
+	flex: unset;
 }
 
 #departure-time {
@@ -119,7 +120,7 @@
 }
 
 .bus {
-  position: absolute;
+  position: relative;
   min-width: 100rem;
   height: auto;
   bottom: 0;
