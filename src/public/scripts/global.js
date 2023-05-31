@@ -26,6 +26,7 @@ window.addEventListener(`load`, () => {
 
 if ("showModal" in document.createElement("dialog")) {
   const showDialog = document.getElementById("new-card-button");
+  const newProject = document.getElementById("new-project");
   const newCard = document.getElementById("new-checklist");
   const closeBtn = document.getElementById("close");
   const newDialog = document.createElement("dialog");
@@ -35,6 +36,11 @@ if ("showModal" in document.createElement("dialog")) {
   newDialog.className = "new-card-dialog";
   newDialog.append(newCard);
   document.body.append(newDialog);
+
+  newProject.addEventListener("click", (event) => {
+    newDialog.showModal();
+    event.preventDefault();
+  });
 
   showDialog.addEventListener("click", (event) => {
     newDialog.showModal();

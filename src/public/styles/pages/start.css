@@ -4,14 +4,14 @@
   max-height: 40em;
   min-height: 25em;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/image/vervoerregio-amsterdam-header.jpg");
+    url("/image/start-header/vervoerregio-amsterdam-header4.png");
   background-image: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.9137780112044818) 0%,
       rgba(0, 0, 0, 0.7569152661064426) 15%,
       rgba(0, 0, 0, 0) 47%
     ),
-    url("/image/vervoerregio-amsterdam-header4.png");
+    url("/image/start-header/vervoerregio-amsterdam-header4.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
