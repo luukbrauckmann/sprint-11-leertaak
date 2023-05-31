@@ -38,10 +38,10 @@ socket.on('seats', (newSeats) => {
 	seats = newSeats
 
 	for (let seat of seats) {
-		const seatElement = document.querySelector(`.checked-in-user--${seat.id}`)
+		const seatElement = document.querySelector(`#passagier_${seat.id}`)
 		const seatIsAssigned = seat.player !== null
-		if (seatIsAssigned) seatElement.classList.add('checked-in-user--assigned')
-		else seatElement.classList.remove('checked-in-user--assigned')
+		if (seatIsAssigned) seatElement.style.setProperty("--display", "initial")
+		else seatElement.style.setProperty("--display", "none")
 	}
 })
 socket.on('departure-time', (newDepartureTime) => {
@@ -52,6 +52,38 @@ socket.on('departure-time', (newDepartureTime) => {
 		bus.classList.replace('move-in', 'move-out')
 		setTimeout(() => bus.classList.replace('move-out', 'move-in'), 1500)
 	}
+})
+
+socket.on('connect', () => {
+	const { connected } = socket
+	console.log('connected', connected)
+	if (connected) {
+		bus.classList.add('bus--in-service', 'move-in')
+
+		const subtext = document.querySelector('.sub--ideal')
+		subtext.style.setProperty("--display", "block")
+	}
+	else {
+		checkInElement.classList.add('check-in-device--error')
+
+		const subtext = document.querySelector('.sub--error')
+		subtext.style.setProperty("--display", "block")
+	}
+})
+
+socket.on('disconnect', () => {
+	const { connected } = socket
+	console.log('disconnected', connected)
+	checkInElement.classList.add('check-in-device--error')
+
+	const subtextElements = document.querySelectorAll('.sub')
+	for (let subtextElement of subtextElements) subtextElement.style.setProperty("--display", "none")
+
+	const subtext = document.querySelector('.sub--error')
+	subtext.style.setProperty("--display", "block")
+
+	bus.classList.replace('move-in', 'move-out')
+	setTimeout(() => bus.classList.remove('bus--in-service', 'move-out'), 1500)
 })
 
 
