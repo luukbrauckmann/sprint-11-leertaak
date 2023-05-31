@@ -64,6 +64,12 @@ socket.on('connection', (client) => {
 		assignPlayerToSeat(player)
 		socket.emit('seats', seats)
 	})
+
+	// Emits jump event to all clients
+	client.on('jump', (clientId) => {
+		const seat = seats.find(seat => seat.player === clientId)
+		socket.emit('jump', seat)
+	})
 })
 
 // Start departure timer

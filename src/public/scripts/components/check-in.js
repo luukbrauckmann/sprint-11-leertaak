@@ -17,6 +17,12 @@ parent.addEventListener("scroll", (event) => {
 const checkInDevice = document.querySelector('.check-in-device')
 checkInDevice.addEventListener('click', () => checkIn())
 
+addEventListener("keydown", (event) => {
+	const { code } = event
+	if (code !== "Space") return
+	socket.emit('jump', socket.id)
+})
+
 checkIn = () => {
 	const { id } = socket
 
@@ -37,7 +43,6 @@ socket.on('players', (newPlayers) => players = newPlayers)
 socket.on('seats', (newSeats) => {
 	seats = newSeats
 
-	console.log(seats);
 	for (let seat of seats) {
 		const seatElement = document.querySelector(`#passagier_${seat.id}`)
 
@@ -57,6 +62,12 @@ socket.on('departure-time', (newDepartureTime) => {
 		bus.classList.replace('move-in', 'move-out')
 		setTimeout(() => bus.classList.replace('move-out', 'move-in'), 1500)
 	}
+})
+
+socket.on('jump', (seat) => {
+	const seatElement = document.querySelector(`#passagier_${seat.id}`)
+	seatElement.classList.add('passagier--jump')
+	setTimeout(() => seatElement.classList.remove('passagier--jump'), 100);
 })
 
 socket.on('connect', () => {

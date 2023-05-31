@@ -215,12 +215,28 @@
   }
 }
 
+@keyframes jump {
+  0% {
+    transform: translateY(0rem)
+  }
+  50% {
+    transform: translateY(-1rem)
+  }
+  100% {
+    transform: translateY(0rem)
+  }
+}
+
 [id^="passagier_"] {
 	--display: none;
 	--skin-color: lightgrey;
 	--body-color: grey;
 
 	display: var(--display);
+}
+
+[id^="passagier_"].passagier--jump {
+	animation: jump .1s ease-in-out forwards;
 }
 
 [id^="passagier_"] .bus-st15,
