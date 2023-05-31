@@ -1,4 +1,5 @@
 import express from 'express'
+import { get } from '../lib/data-access.js'
 
 const startPage = express.Router()
 
@@ -13,14 +14,13 @@ const options = {
 	data: []
 }
 
-function getData(){
-	return fetch("https://api.vervoerregio-amsterdam.fdnd.nl/api/v1/websites")
-		.then((res) => res.json())
-
-}
+const getPartners = () => get("websites")
 
 startPage.get(options.path, async (request, response) => {
-	options.data = await getData()
+	const partnersResponse = await getPartners()
+	options["partners"] = partnersResponse.websites
+
+
 	return response.render('index', options)
 })
 

@@ -58,7 +58,7 @@ body > header nav {
 }
 
 body > header nav .menu__menu-item {
-  padding: 1.5rem;
+  padding: .5rem;
   height: fit-content;
   width: fit-content;
   white-space: nowrap;
@@ -113,7 +113,7 @@ body > header ul li .new-checklist {
   color: white;
   cursor: pointer;
   font-size: 1rem;
-  padding: 1rem;
+  padding: .5rem;
   width: calc(100% - 1em);
   margin: 0 0.5em;
   font-family: Regular, san-serif;

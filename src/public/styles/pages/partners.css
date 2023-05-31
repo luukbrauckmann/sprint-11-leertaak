@@ -16,6 +16,10 @@
     gap: var(--medium-size);
 }
 
+.partner__content{
+    margin-bottom: 4rem;
+}
+
 body {
     background-color: var(--c-achtergrond);
     height: fit-content;
@@ -109,6 +113,7 @@ h3 {
     margin-bottom: auto;
     padding: 2px 0;
     overflow: auto;
+    white-space: nowrap;
 }
 
 .partner-chips::-webkit-scrollbar {

@@ -8,7 +8,7 @@
                         <div class="label-form">
                             <label for="name">Kies een Partner *</span></label>
                             <select id="name" name="websiteId">
-                                <% data.websites.forEach(website=> { %>
+                                <% partners.forEach(website=> { %>
                                     <option value="<%= website.id  %>">
                                         <%= website.titel %>
                                     </option>

@@ -11,7 +11,7 @@ const faviconAPI = 'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&
 
 
 // base API urls with endpoint and/or query params
-const projectsData = await fetchJson(`${baseUrl}/urls?first=5`).then((data) => data);
+const projectsData = await fetchJson(`${baseUrl}/urls?first=20`).then((data) => data);
 
 
 const options = {
