@@ -2,7 +2,7 @@ import express from 'express'
 import http from 'http'
 import { Server } from 'socket.io'
 import compression from 'compression'
-import helmet from 'helmet'
+// import helmet from 'helmet'
 
 import startPage from './routes/start-page.js'
 import partnersPage from './routes/partners-page.js'
@@ -20,7 +20,7 @@ app.set('views', 'src/views')
 app.set('trust proxy', true)
 
 app.use(compression())
-app.use(helmet())
+// app.use(helmet())
 app.use(express.static('src/public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

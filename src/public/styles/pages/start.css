@@ -73,8 +73,8 @@
   scroll-snap-align: start;
 } */
 
-.check-in {
-  height: 72rem;
+.page.check-in {
+  min-height: unset;
   background: #87ceeb;
   background: linear-gradient(
     0deg,
@@ -95,10 +95,12 @@
 }
 
 .page.check-in .page__content {
+	margin-top: 20rem;
   position: relative;
   border-bottom: 5rem solid #2a2922;
   padding-bottom: 0;
   /* min-height: 550px; */
+	flex: unset;
 }
 
 #departure-time {
@@ -111,17 +113,21 @@
   display: var(--display);
 }
 
+.sub p {
+	padding-bottom: 1rem;
+}
+
 .bus {
-  position: absolute;
+  position: relative;
   min-width: 100rem;
   height: auto;
   bottom: 0;
-  right: 100%;
-  transform: translateY(1rem);
+  left: 0;
+  transform: translate(calc(-100% - (var(--body-padding) * 2)), 1rem);
 }
 
 .bus--in-service {
-  right: var(--body-padding);
+  transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2)), 1rem);
 }
 
 .check-in-device {
@@ -129,7 +135,10 @@
   position: absolute;
   right: 50%;
   transform: translateX(50%);
-  top: 0rem;
+  top: -22rem;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
 }
 
 /* .check-in-device--loading {
@@ -169,27 +178,27 @@
 
 @keyframes move-in {
   0% {
-    right: 100%;
+		transform: translate(calc(-100% - (var(--body-padding) * 2)), 1rem);
   }
   80% {
-    right: calc(var(--body-padding) - 1rem);
+		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2) + 1rem), 1rem);
   }
   100% {
-    right: var(--body-padding);
+		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2)), 1rem);
   }
 }
 
 @keyframes move-out {
   0% {
-    transform: translate(0, 1rem);
+		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2)), 1rem);
   }
 
   20% {
-    transform: translate(-1rem, 1rem);
+		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2) - 1rem), 1rem);
   }
 
   100% {
-    transform: translate(calc(100% + var(--body-padding)), 1rem);
+		transform: translate(calc((100% + 100vw) - (var(--body-padding) * 2)), 1rem);
   }
 }
 
@@ -265,6 +274,10 @@
     scroll-snap-align: start;
   }
 
+	.page.check-in .page__content {
+		margin-top: 0;
+	}
+
   .check-in {
     height: auto;
   }
@@ -275,22 +288,21 @@
 
   .check-in-device {
     right: var(--body-padding);
-    top: -9rem;
+    top: -18rem;
     transform: unset;
   }
 }
 
 @media (min-width: 48rem) {
   .page.check-in .page__header {
-    padding-top: 12rem;
+    padding-top: 10rem;
   }
 
   .sub {
     width: 26rem;
   }
-
-  .check-in-device {
-    top: -15rem;
+	.check-in-device {
+    top: -22rem;
   }
 }
 
