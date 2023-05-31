@@ -211,26 +211,20 @@
   }
 }
 
-#passagier_1,
-#passagier_2,
-#passagier_3,
-#passagier_4,
-#passagier_5,
-#passagier_6,
-#passagier_7,
-#passagier_8,
-#passagier_9,
-#passagier_10,
-#passagier_11,
-#passagier_12,
-#passagier_13,
-#passagier_14,
-#passagier_15,
-#passagier_16,
-#passagier_17,
-#passagier_18 {
+[id^="passagier_"] {
 	--display: none;
+	--skin-color: lightgrey;
+	--body-color: grey;
+
 	display: var(--display);
+}
+
+[id^="passagier_"] .bus-st15,
+[id^="passagier_"] .bus-st18 {
+	fill: var(--skin-color);
+}
+[id^="passagier_"] .bus-st4 {
+	fill: var(--body-color);
 }
 
 @media (min-width: 36rem) {

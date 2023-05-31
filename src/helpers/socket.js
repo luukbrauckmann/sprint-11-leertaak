@@ -1,5 +1,13 @@
+const skinColors = [
+	"#8d5524",
+	"#C68642",
+	"#E0AC69",
+	"#F1C27D",
+	"#FFDBAC"
+]
+
 export let players = []
-export let seats = Array.from({ length: 18 }, (_, i) => ({ id: i + 1, player: null }))
+export let seats = Array.from({ length: 18 }, (_, i) => ({ id: i + 1, player: null, skinColor: "lightgrey", bodyColor: "grey" }))
 export let departureTime = 30
 
 export const addPlayer = (player) => players.push(player)
@@ -14,7 +22,7 @@ export const departureTimer = (socket) => {
 		if (departureTime === 0) {
 			departureTime = 30
 			setTimeout(() => {
-				seats = Array.from({ length: 18 }, (_, i) => ({ id: i + 1, player: null }))
+				seats = Array.from({ length: 18 }, (_, i) => ({ id: i + 1, player: null, skinColor: "lightgrey", bodyColor: "grey" }))
 				socket.emit('seats', seats)
 			}, 1500)
 
@@ -29,7 +37,14 @@ export const assignPlayerToSeat = (player) => {
 
 	// Assign player to seat
 	const seat = seats.findLast(seat => seat.player === null)
-	if (seat) seat.player = player.id
+	if (seat) {
+		const skinColor = skinColors[Math.floor(Math.random() * skinColors.length)]
+		const bodyColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`
+
+		seat.player = player.id
+		seat.skinColor = skinColor
+		seat.bodyColor = bodyColor
+	}
 
 	// Check if all seats are assigned
 	const avalableSeats = seats.filter(seat => seat.player !== null)

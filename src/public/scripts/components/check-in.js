@@ -37,11 +37,16 @@ socket.on('players', (newPlayers) => players = newPlayers)
 socket.on('seats', (newSeats) => {
 	seats = newSeats
 
+	console.log(seats);
 	for (let seat of seats) {
 		const seatElement = document.querySelector(`#passagier_${seat.id}`)
+
 		const seatIsAssigned = seat.player !== null
 		if (seatIsAssigned) seatElement.style.setProperty("--display", "initial")
 		else seatElement.style.setProperty("--display", "none")
+
+		seatElement.style.setProperty("--skin-color", seat.skinColor)
+		seatElement.style.setProperty("--body-color", seat.bodyColor)
 	}
 })
 socket.on('departure-time', (newDepartureTime) => {
