@@ -1,6 +1,7 @@
 import express from 'express'
 
 import { fetchJson, postJson } from '../helpers/fetchWrapper.js'
+import { get } from '../lib/data-access.js'
 
 const partnersPage = express.Router()
 
@@ -25,8 +26,14 @@ const options = {
 	faviconAPI
 }
 
-partnersPage.get(options.path, (request, response) => response.render('index', options))
+const getPartners = () => get("websites")
 
-console.log(projectsData)
+partnersPage.get(options.path, async (request, response) => {
+	const partnersResponse = await getPartners()
+	options["partners"] = partnersResponse.websites
+
+
+	return response.render('index', options)
+})
 
 export default partnersPage
