@@ -1,0 +1,335 @@
+/*
+===============================
+🌍 GLOBAL STYLING TWEAK
+===============================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-size);
+}
+
+body {
+    background-color: var(--c-achtergrond);
+    height: fit-content;
+}
+
+h3 {
+    color: initial;
+}
+
+
+/*
+===============================
+✨ VARIABLES
+===============================
+*/
+
+:root {
+    --xsmall-size: 2px;
+    --small-size: .5rem;
+    --medium-size: 1.2rem;
+    --large-size: 1.7rem;
+    --xlarge-size: 3rem;
+
+    --small-radius: 4px;
+    --medium-radius: 6px;
+    --large-radius: 18px;
+
+    --c-container: #cdcdcd;
+    --c-achtergrond: #ffffff;
+
+    --container-border: 1px solid var(--c-container);
+}
+
+
+/*
+===============================
+📃 FILTER BAR
+===============================
+*/
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--medium-size);
+    width: 100%;
+    padding: var(--medium-size) 0;
+    border-bottom: var(--container-border);
+}
+
+.filter-container * {
+    height: fit-content;
+    font-size: var(--medium-size);
+}
+
+.filter-container :is(.filter details, .sorting select, #new-project) {
+    border: var(--container-border);
+    border-radius: var(--small-radius);
+    padding: var(--small-size);
+}
+
+.filter-container .filter details[open] summary {
+    width: 100%;
+}
+
+.filter-container .filter {
+    overflow: auto;
+}
+
+.filter-container .filter :is(summary, label, input) {
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    /* width: max-content; */
+}
+
+.filter-container .filter fieldset {
+    display: flex;
+    flex-direction: column;
+    border: unset;
+    padding-top: var(--small-size);
+    gap: var(--small-size);
+}
+
+.filter-container .filter fieldset label {
+    display: flex;
+    gap: var(--small-size);
+}
+
+.filter-container .filter .filters .partner-chips {
+    margin-bottom: auto;
+    padding: 2px 0;
+    overflow: auto;
+}
+
+.partner-chips::-webkit-scrollbar {
+    height: 8px;
+}
+
+.partner-chips::-webkit-scrollbar-thumb {
+    background-color: var(--c-container);
+    border-radius: var(--medium-radius);
+}
+
+.filter-container .filter .filters .partner-chips .partner-chip {
+    padding: 2px var(--medium-size);
+    border-radius: var(--large-radius);
+    border: 1px solid #DD296D;
+    background: rgba(221, 41, 109, 0.03);
+}
+
+.filter-container .filter details summary {
+    margin: calc(-1 * var(--small-size));
+    padding: var(--small-size);
+    min-width: 15.8rem;
+}
+
+.filter-container .filter details {
+    transition: 200ms;
+}
+
+.filter-container .filter details[open] {
+    margin-bottom: var(--small-size) !important;
+}
+
+.filter-container #new-project {
+    margin-top: auto;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    width: max-content;
+}
+
+.filter-container :is(.sorting select, button) {
+    cursor: pointer;
+}
+
+.filter-container :is(.filter, .sorting) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
+}
+
+.filter-container .filter .filters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-right: var(--container-border);
+    padding-right: var(--medium-size);
+}
+
+.filter-container div {
+    display: flex;
+    gap: var(--small-size);
+}
+
+.filter-container .sorting .sorter {
+    display: flex;
+    gap: var(--small-size);
+    border-right: var(--container-border);
+    padding-right: var(--small-size);
+}
+
+
+/*
+===============================
+📃 PROJECTS
+===============================
+*/
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-size);
+}
+
+.projects-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17.3rem, 1fr));
+    gap: var(--small-size);
+}
+
+.projects-overview .project {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--large-size);
+    border: var(--container-border);
+    border-radius: var(--small-radius);
+    padding: var(--small-size);
+}
+
+.projects-overview .project>* {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--xsmall-size);
+}
+
+.projects-overview .project .project-info img {
+    height: auto;
+}
+
+.projects-overview .project .project-info .project-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--xsmall-size);
+}
+
+.projects-overview .project .project-info a {
+    position: relative;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 82%;
+    z-index: 1;
+}
+
+.projects-overview .project .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: var(--small-size);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.projects-overview .project .more:active {
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+
+.projects-overview .project .project-progression span {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: var(--small-size);
+    width: 100%;
+}
+
+.projects-overview .project .project-progression span meter {
+    width: 100%;
+    height: var(--medium-size);
+}
+
+.projects-overview .project .project-progression span meter::-webkit-meter-optimum-value {
+    background-color: var(--primary-color);
+}
+
+
+/*
+===============================
+📱 QUERIES
+===============================
+*/
+
+@media only screen and (max-width: 62rem) {
+    .filter-container .filter .filters {
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .filter-container .filter .filters summary {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 48rem) {
+    .projects-overview .project {
+        gap: var(--xlarge-size);
+    }
+
+    .filter-container :is(.filter details, .sorting select) {
+        width: 100%;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        gap: var(--medium-size);
+    }
+
+    .filter-container .filter .filters {
+        border: none;
+        padding: 0;
+    }
+
+    .filter-container .sorting .sorter {
+        border: none;
+    }
+
+    .filter-container div {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 36rem) {
+    .page__content {
+        padding: 1rem var(--small-size)
+    }
+
+    .filter-container .sorting .sorter {
+        padding: 0;
+    }
+
+    .filter-container :is(.filter details, .sorting select, #new-project) {
+        width: 100%;
+    }
+
+    .filter-container>div {
+        flex-direction: column;
+    }
+}
