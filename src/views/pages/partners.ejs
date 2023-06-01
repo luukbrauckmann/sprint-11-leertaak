@@ -12,10 +12,14 @@
           <details>
             <summary>Partners</summary>
             <form action="/partners">
-              <fieldset name="filter">
+              <fieldset id="partner-filter" name="filter">
               <% for(let partner of partners) { %>
                 
-                  <label><input type="checkbox" value="<%= partner.id %>" id="checkbox-<%= partner.id %>" /><%= partner.titel %></label>
+                  <label><input 
+                  <% if(filterPartner != null && filterPartner.includes(partner.id)) { %>
+                    checked
+                    <% } %>
+                  name="filterPartner" type="checkbox" value="<%= partner.id %>" id="checkbox-<%= partner.id %>" /><%= partner.titel %></label>
                 
                 <% } %>
             </fieldset>
@@ -46,9 +50,7 @@
 
           <form class="sorter">
             <select name="field" id="">
-              <option value="titel">Titel</option>
-              <option value="datum">Datum</option>
-              <option value="progressie">Progressie</option>
+              
             </select>
 
             <select name="direction" id="">

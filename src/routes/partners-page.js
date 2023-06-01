@@ -30,8 +30,10 @@ const getPartners = () => get("websites")
 
 partnersPage.get(options.path, async (request, response) => {
 	const partnersResponse = await getPartners()
-	options["partners"] = partnersResponse.websites
+	let { filterPartner } = request.query
 
+	options["partners"] = partnersResponse.websites
+	options['filterPartner'] = filterPartner
 
 	return response.render('index', options)
 })
