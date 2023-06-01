@@ -135,6 +135,18 @@ h6 {
   color: var(--primary-color);
 }
 
+h1 {
+  font-size: clamp(2.5rem, 8vw, 3rem);
+}
+
+h1 span {
+  font-size: clamp(2rem, 11vw, 4rem);
+}
+
+h2 {
+  font-size: 2em;
+}
+
 html,
 body {
   /* height: 100%; */

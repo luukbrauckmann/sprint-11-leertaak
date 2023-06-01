@@ -37,10 +37,12 @@ if ("showModal" in document.createElement("dialog")) {
   newDialog.append(newCard);
   document.body.append(newDialog);
 
+  if (newProject) {
   newProject.addEventListener("click", (event) => {
     newDialog.showModal();
     event.preventDefault();
   });
+};
 
   showDialog.addEventListener("click", (event) => {
     newDialog.showModal();

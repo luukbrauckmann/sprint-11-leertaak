@@ -35,12 +35,8 @@
 
 .map h1 {
   color: white;
-  font-size: clamp(1.5rem, 8vw, 3rem);
 }
 
-.map h1 span {
-  font-size: clamp(2rem, 11vw, 4rem);
-}
 
 .map .upper-curve {
   position: absolute;
@@ -134,7 +130,7 @@
 }
 
 .page.check-in .page__header h2 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .page.check-in .page__content {
