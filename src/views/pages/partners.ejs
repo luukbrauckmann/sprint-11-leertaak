@@ -49,14 +49,18 @@
           <h2>Sorteren op: </h2>
 
           <form class="sorter">
-            <select name="field" id="">
-              
+            <select name="sortField">
+              <% for (let sortField of sortFields) { %>
+                <option value="<%= JSON.stringify(sortField) %>" <% if (JSON.stringify(currentSortField) === JSON.stringify(sortField)) { %>selected<% } %>><%- sortField.label %></option>
+            <% } %>
             </select>
 
             <select name="direction" id="">
               <option value="asc">Oplopend</option>
               <option value="desc">Aflopend</option>
             </select>
+
+            <button>ok</button>
           </form>
         </section>
 
@@ -70,7 +74,7 @@
       <h2>Projecten</h2>
 
       <section class="projects-overview">
-        <% projectsData.urls.forEach(project=> { %>
+        <% projectsData.forEach(project=> { %>
 
         <!-- project template -->
         <section class="project">
