@@ -4,14 +4,14 @@
   max-height: 40em;
   min-height: 25em;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/image/start-header/vervoerregio-amsterdam-header4.png");
+    url("/image/start-header/large/header4-tiny.jpg");
   background-image: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.9137780112044818) 0%,
       rgba(0, 0, 0, 0.7569152661064426) 15%,
       rgba(0, 0, 0, 0) 47%
     ),
-    url("/image/start-header/vervoerregio-amsterdam-header4.png");
+    url("/image/start-header/large/header4-tiny.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -19,7 +19,6 @@
   justify-content: center;
   padding: 0 var(--body-padding);
 }
-
 .map {
   width: 100%;
   max-width: 30em;
@@ -64,9 +63,53 @@
   fill: #41decef5;
 }
 
+.start-content {
+  padding: 4em var(--body-padding);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+.content-container {
+  padding: 1em;
+  border: var(--container-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: 5px;
+
+}
+
+.content-container img{
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.content-container:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.content-container:nth-child(2) {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.content-container:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
 .start {
   overflow: auto;
-  scroll-snap-type: y mandatory;
 }
 
 /* .start > .page {
@@ -95,12 +138,12 @@
 }
 
 .page.check-in .page__content {
-	margin-top: 20rem;
+  margin-top: 20rem;
   position: relative;
   border-bottom: 5rem solid #2a2922;
   padding-bottom: 0;
   /* min-height: 550px; */
-	flex: unset;
+  flex: unset;
 }
 
 #departure-time {
@@ -114,7 +157,7 @@
 }
 
 .sub p {
-	padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .bus {
@@ -136,9 +179,9 @@
   right: 50%;
   transform: translateX(50%);
   top: -22rem;
-	cursor: pointer;
-	background: transparent;
-	border-color: transparent;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
 }
 
 /* .check-in-device--loading {
@@ -178,27 +221,42 @@
 
 @keyframes move-in {
   0% {
-		transform: translate(calc(-100% - (var(--body-padding) * 2)), 1rem);
+    transform: translate(calc(-100% - (var(--body-padding) * 2)), 1rem);
   }
   80% {
-		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2) + 1rem), 1rem);
+    transform: translate(
+      calc((-100% + 100vw) - (var(--body-padding) * 2) + 1rem),
+      1rem
+    );
   }
   100% {
-		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2)), 1rem);
+    transform: translate(
+      calc((-100% + 100vw) - (var(--body-padding) * 2)),
+      1rem
+    );
   }
 }
 
 @keyframes move-out {
   0% {
-		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2)), 1rem);
+    transform: translate(
+      calc((-100% + 100vw) - (var(--body-padding) * 2)),
+      1rem
+    );
   }
 
   20% {
-		transform: translate(calc((-100% + 100vw) - (var(--body-padding) * 2) - 1rem), 1rem);
+    transform: translate(
+      calc((-100% + 100vw) - (var(--body-padding) * 2) - 1rem),
+      1rem
+    );
   }
 
   100% {
-		transform: translate(calc((100% + 100vw) - (var(--body-padding) * 2)), 1rem);
+    transform: translate(
+      calc((100% + 100vw) - (var(--body-padding) * 2)),
+      1rem
+    );
   }
 }
 
@@ -274,9 +332,9 @@
     scroll-snap-align: start;
   }
 
-	.page.check-in .page__content {
-		margin-top: 0;
-	}
+  .page.check-in .page__content {
+    margin-top: 0;
+  }
 
   .check-in {
     height: auto;
@@ -301,13 +359,66 @@
   .sub {
     width: 26rem;
   }
-	.check-in-device {
+  .check-in-device {
     top: -22rem;
+  }
+
+  .content-container:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  
+  .content-container:nth-child(2) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  
+  .content-container:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    flex-direction: row;
+  }
+  .content-container:nth-child(3) img{
+    width: calc(50% - .5em);
+    object-fit: cover;
   }
 }
 
 @media (min-width: 62rem) {
   .sub {
     width: 40rem;
+  }
+
+  .content-container:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  
+  .content-container:nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  
+  .content-container:nth-child(3) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    flex-direction: column;
+  }
+
+  .content-container:nth-child(3) img{
+    width: 100%;
+
   }
 }
