@@ -3,7 +3,7 @@
   <span> Toolgankelijk</span>
 </h1>
 
-<img width="100%" alt="image" src="https://github.com/luukbrauckmann/sprint-10-leertaak/assets/112861160/701a0580-dd25-4369-bb06-2aabe661c73e">
+<img width="100%" alt="image" src="https://github.com/luukbrauckmann/sprint-11-leertaak/assets/112861160/d5b34c40-43fa-4899-86d3-7953faf74a21">
 
 <h2 id="inhoud">📦 Inhoud</h2>
 
